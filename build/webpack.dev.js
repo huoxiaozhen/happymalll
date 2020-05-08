@@ -4,6 +4,9 @@ const webpack = require('webpack');
 
 module.exports = merge(common, {
   mode: 'development',
+  output: {
+    publicPath: '/dist'
+  },
   module: {
     rules: [
       {
@@ -22,7 +25,12 @@ module.exports = merge(common, {
       errors: true
     },
     open: true,
-    hot: true
+    proxy: {
+      '**/*.do' : {
+        target: 'http://test.happymmall.com',
+        changeOrigin : true
+      }
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
