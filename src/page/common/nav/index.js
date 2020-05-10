@@ -2,7 +2,7 @@
  * @Author: markHuo 
  * @Date: 2020-05-05 08:52:45 
  * @Last Modified by: markHuo
- * @Last Modified time: 2020-05-05 10:24:39
+ * @Last Modified time: 2020-05-10 09:05:42
  */
 'use strict';
 require('./index.css');
@@ -24,7 +24,7 @@ let nav = {
     })
     // 注册点击事件
     $('.js-register').click(function(){
-      window.location.href = './register.html';
+      window.location.href = './user-register.html';
     })
     // 退出点击事件
     $('js-logout').click(function(){
@@ -38,7 +38,7 @@ let nav = {
   // 加载用户信息
   loadUserInfo: function(){
     _user.checkLogin(function(res){
-      $('.user.not-login').hide().sibling('.user.login').show().find('.username').text(res.username);
+      $('.user.not-login').hide().siblings('.user.login').show().find('.username').text(res.username);
     },function(errMsg){
       // do nothing
     })

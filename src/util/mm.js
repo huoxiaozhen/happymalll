@@ -2,7 +2,7 @@
  * @Author: markHuo 
  * @Date: 2020-05-04 09:01:08 
  * @Last Modified by: markHuo
- * @Last Modified time: 2020-05-04 15:37:16
+ * @Last Modified time: 2020-05-10 08:57:58
  */
 'use strict';
 // 引入hogan
@@ -68,7 +68,7 @@ let _mm  = {
     }
     // 手机号验证
     if(type === 'phone'){
-      return /^1\{10}$/.test(value);
+      return /^1\d{10}$/.test(value);
     }
     // 邮箱格式验证
     if(type === 'email'){
@@ -77,7 +77,7 @@ let _mm  = {
   },
   // 统一登录处理
   doLogin: function(){
-    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
   },
   goHome: function(){
     window.location.href = './index.html';
