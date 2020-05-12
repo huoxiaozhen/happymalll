@@ -16,6 +16,8 @@ module.exports = {
   entry: {
     common: path.join(__dirname,'../src/page/common/index.js'),
     index: path.join(__dirname,'../src/page/index/index.js'),
+    list: path.join(__dirname,'../src/page/list/index.js'),
+    detail: path.join(__dirname,'../src/page/detail/index.js'),
     'user-login': path.join(__dirname,'../src/page/user-login/index.js'),
     'user-register': path.join(__dirname,'../src/page/user-register/index.js'),
     'user-pass-reset': path.join(__dirname,'../src/page/user-pass-reset/index.js'),
@@ -37,7 +39,9 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 1024,
-              name: 'resources/[name].[hash:8].[ext]'
+              name: 'resources/[name].[hash:8].[ext]',
+              // 在html里的img的src属性添加require会加载不了图片，file-loader新版本默认使用了esModule语法，造成了引用图片文件时的方式和以前的版本不一样,
+              esModule: false
             }
           }
         ]
@@ -52,6 +56,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+    new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
+    new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
     new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
     new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
     new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
