@@ -2,7 +2,7 @@
  * @Author: markHuo 
  * @Date: 2020-05-05 09:37:37 
  * @Last Modified by: markHuo
- * @Last Modified time: 2020-05-12 21:51:55
+ * @Last Modified time: 2020-05-16 17:43:34
  */
 'use strict';
 let _mm = require('util/mm.js');
@@ -89,6 +89,6 @@ let _cart = {
       success: resolve,
       error: reject
     });
-  },
+  }
 };
 module.exports = _cart;
