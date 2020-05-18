@@ -2,7 +2,7 @@
  * @Author: markHuo 
  * @Date: 2020-05-17 11:01:32 
  * @Last Modified by: markHuo
- * @Last Modified time: 2020-05-17 11:29:42
+ * @Last Modified time: 2020-05-17 20:44:33
  */
 'use strict';
 require('./index.css');
@@ -50,7 +50,6 @@ var page = {
       $content = $('.content');
     $content.html('<div class="loading"></div>');
     _order.getOrderDetail(this.data.orderNumber, function (res) {
-      console.log(res)
       _this.dataFilter(res);
       // 渲染html
       orderDetailHtml = _mm.renderHtml(templateIndex, res);
